@@ -18,6 +18,7 @@ import PuntaCania from '../Aerodrome/Punta.png';
 import Cibaoa from '../Aerodrome/Cibao.png'; 
 import Larnacaa from '../Aerodrome/Larnaka.png';
 import Paphosa from '../Aerodrome/Pafos.png';
+import Canariesi from '../Aerodrome/Canaries.png';
 
 
 const Destinations = () => {
@@ -50,7 +51,7 @@ const Destinations = () => {
     {
       city: 'Gran Canaria',
       country: 'Spain',
-      image: undefined,
+      image: Canariesi,
       video : Canaries,
       popular: false,
       showHouse: false,
@@ -165,29 +166,13 @@ const Destinations = () => {
                   </div>
                 )}
                 
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-                  Book Now
-                </button>
+              
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-blue-600 text-white p-8 rounded-xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Can't Find Your Destination?
-            </h2>
-            <p className="text-lg mb-6">
-              We fly to over 200 destinations across Europe and beyond. 
-              Use our route map to discover all available flights.
-            </p>
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105">
-              View Route Map
-            </button>
-          </div>
-        </div>
+       
       </div>
     </div>
   );
