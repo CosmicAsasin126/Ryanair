@@ -53,7 +53,7 @@ const Team = () => {
       experience: 'Newest member of the team',
       bio: 'Excited to contribute to Ryanair\'s growth and success.',
       image: Kylar,
-      achievements: ['ARCV CEO', 'Women in Aviation Pioneer'],
+      achievements: ['ARCV CEO', 'Ryanair Virtual Staff'],
       discord: 'https://discord.com/users/1134935202091765800',
     },
     {
@@ -229,8 +229,8 @@ const Team = () => {
                 <div className="text-yellow-300">Team Diversity</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">100%</div>
-                <div className="text-yellow-300">We</div>
+                <div className="text-3xl font-bo>Satisfactiond mb-2">100%</div>
+                <div className="text-yellow-300">Satisfaction</div>
               </div>
               <div>
                 <div className="text-3xl font-bold mb-2">4.2★</div>
