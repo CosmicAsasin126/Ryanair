@@ -62,7 +62,7 @@ const Team = () => {
       experience: 'ATC Manager of Ryanair Virtual',
       bio: 'Keeping our skies safe with top-notch ATC services. Passionate about aviation and community building.',
       image: Jake,
-      achievements: ['Operations Excellence Award', 'Women in Aviation Pioneer'],
+      achievements: ['Operations Excellence Award', 'Top ATC Manager'],
       discord: 'https://discord.com/users/921087306469867581',
     },
     {
