@@ -1,58 +1,60 @@
 import React from 'react';
-import { Calendar, Globe, Users, Award } from 'lucide-react';
+import { Calendar, Globe, Users, Award, PlaneLanding } from 'lucide-react';
+import StarBorder from '../StarBoarder/StarBorder.tsx';
+import Logo from '../Images/Logo.svg';
 
 const About = () => {
   const milestones = [
     {
-      year: '1985',
+      year: 'April 2025',
       title: 'Company Founded',
-      description: 'Started as a small regional airline with just 2 aircraft.',
+      description: 'Started with the founder and a big dream',
     },
     {
-      year: '1997',
-      title: 'European Expansion',
-      description: 'Launched low-cost flights across Europe, revolutionizing air travel.',
+      year: 'May 2025',
+      title: 'Expansion onto Project Flight',
+      description: 'Launched operations on Project Flight with our first flight to Gatwick.',
     },
     {
-      year: '2003',
-      title: '50 Million Passengers',
-      description: 'Reached our first major passenger milestone.',
+      year: 'June 2025',
+      title: '100 Pilots',
+      description: 'Reached our first major member milestone.',
     },
     {
-      year: '2010',
-      title: 'Fleet Modernization',
-      description: 'Invested €2B in new Boeing 737-800 aircraft.',
+      year: 'July 2025',
+      title: 'Improvement of Services',
+      description: 'Introduced new routes and enhanced pilot service.',
     },
     {
-      year: '2018',
-      title: '200 Destinations',
-      description: 'Expanded network to over 200 destinations in 40 countries.',
+      year: 'August 2025',
+      title: 'ATC Expansion',
+      description: 'Expanded our ATC services to cover more regions.',
     },
     {
-      year: '2023',
-      title: '150M+ Passengers',
-      description: 'Became Europe\'s most popular airline.',
+      year: 'August 2025',
+      title: 'Leading Low-Cost Airline',
+      description: 'Became Project Flight\'s leading low-cost airline with over 100+ members and a growing fleet.',
     },
   ];
 
   const values = [
     {
       icon: <Users className="h-8 w-8" />,
-      title: 'Customer First',
-      description: 'We put our passengers at the heart of everything we do, ensuring exceptional service and value.',
+      title: 'Experience First',
+      description: 'We put our employees and potential passengers first, valuing their feedback and continuously improving our services.',
     },
     {
       icon: <Award className="h-8 w-8" />,
       title: 'Excellence',
-      description: 'We strive for operational excellence in safety, punctuality, and service quality.',
+      description: 'Leading the skies with top-notch service, punctuality, and a modern fleet.',
     },
     {
       icon: <Globe className="h-8 w-8" />,
       title: 'Innovation',
-      description: 'We embrace new technologies and ideas to improve the travel experience.',
+      description: 'Our intuitive planning and short departure times set us apart in the industry.',
     },
     {
-      icon: <Calendar className="h-8 w-8" />,
+      icon: <PlaneLanding className="h-8 w-8" />,
       title: 'Reliability',
       description: 'We are committed to getting you to your destination on time, every time.',
     },
@@ -64,12 +66,11 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About SkyWings
+            About Ryanair
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            For over 35 years, SkyWings has been Europe's leading low-cost airline, 
-            connecting people, cultures, and opportunities across the continent. 
-            We've revolutionized air travel by making it accessible, affordable, and reliable for everyone.
+            Since our founding on April 2025, Ryanair Virtual has grown to become Project Flight's most notorious airline with over 
+            100+ members and a fleet destined for the skies. 
           </p>
         </div>
 
@@ -78,8 +79,9 @@ const About = () => {
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
             <p className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-              To democratize air travel across Europe by providing safe, reliable, and affordable flights 
-              that connect people to the opportunities, experiences, and relationships that matter most to them. 
+              To democratize air travel across Project Flight by providing safe, reliable, and affordable flights 
+              that connect people to the opportunities, experiences, and relationships that matter most to them. Our mission is to always provide affordable travel for passengers across and 
+              our pilots, a journey of a lifetime.
               We believe that everyone should have the freedom to explore the world.
             </p>
           </div>
@@ -132,15 +134,22 @@ const About = () => {
                 }`}
               >
                 <div className="w-full md:w-1/2 px-4">
-                  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-blue-600 text-white px-3 py-1 rounded-full font-bold">
-                        {milestone.year}
+                  <StarBorder
+                    as="button"
+                    className="custom-class"
+                    color="cyan"
+                    speed="5s"
+                  >
+                    <div className= "shadow-lg hover:shadow-xl transition-shadow duration-300">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="bg-blue-600 text-white px-3 py-1 rounded-full font-bold">
+                          {milestone.year}
+                        </div>
+                        <h3 className="text-xl font-bold text-white-900">{milestone.title}</h3>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900">{milestone.title}</h3>
+                      <p className="text-white-600">{milestone.description}</p>
                     </div>
-                    <p className="text-gray-600">{milestone.description}</p>
-                  </div>
+                  </StarBorder>
                 </div>
                 
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg"></div>
@@ -152,9 +161,10 @@ const About = () => {
         {/* Stats Section */}
         <div className="bg-yellow-50 p-8 md:p-12 rounded-xl">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              SkyWings by the Numbers
-            </h2>
+            <img src={Logo} alt="Ryanair Logo" className="h-20 w-20 mx-auto mb-4" />
+            <span className="block text-3xl md:text-4xl font-bold mb-2">
+              Ryanair at its Numbers
+            </span>
             <p className="text-lg text-gray-600">
               Our achievements speak for themselves.
             </p>
