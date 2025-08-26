@@ -21,7 +21,7 @@ import Paphosa from '../Aerodrome/Pafos.png';
 import Canariesi from '../Aerodrome/Canaries.png';
 
 
-const Destinations = () => {
+const Destinations = ({ darkMode, setDarkMode }: { darkMode: boolean, setDarkMode: (val: boolean) => void }) => {
   const destinations = [
     {
       city: 'Gatwick',
@@ -101,26 +101,41 @@ const Destinations = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen py-12 bg-gray-50">
+    <div className={darkMode ? "min-h-screen py-12 bg-gray-900 text-white" : "min-h-screen py-12 bg-gray-50"}>
+      {/* Dark Mode Toggle Button (synced with homepage) */}
+      <div className="fixed top-6 right-6 z-50">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className={`px-4 py-2 rounded-lg font-bold shadow-lg transition-colors duration-200 ${
+            darkMode
+              ? "bg-yellow-500 text-blue-900 hover:bg-yellow-600"
+              : "bg-blue-700 text-white hover:bg-blue-800"
+          }`}
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className={darkMode ? "text-4xl md:text-5xl font-bold text-white mb-4" : "text-4xl md:text-5xl font-bold text-gray-900 mb-4"}>
             Popular Destinations
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className={darkMode ? "text-xl text-gray-300 max-w-2xl mx-auto" : "text-xl text-gray-600 max-w-2xl mx-auto"}>
             Discover amazing Project Flight destinations with our affordable 
             flights and exceptional service.
           </p>
         </div>
 
-      
         {/* Destinations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {destinations.map((destination, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className={darkMode
+                ? "bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                : "bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              }
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -128,7 +143,7 @@ const Destinations = () => {
                 {hoveredIndex === index && destination.video ? (
                   <video
                     src={destination.video}
-                    className="abosulute index-0 w-full h-48 object-cover "
+                    className="absolute z-0 w-full h-48 object-cover"
                     autoPlay
                     loop
                     muted
@@ -147,32 +162,28 @@ const Destinations = () => {
                   </div>
                 )}
                 <div className="absolute top-4 right-4 bg-white bg-opacity-90 text-blue-900 px-3 py-1 rounded-md font-bold">
-                  
+                  {/* ... */}
                 </div>
               </div>
               
               <div className="p-6">
-                <div className="flex items-center gap-2 text-gray-600 mb-2">
+                <div className={darkMode ? "flex items-center gap-2 text-gray-300 mb-2" : "flex items-center gap-2 text-gray-600 mb-2"}>
                   <MapPin className="h-4 w-4" />
                   <span className="text-sm">{destination.country}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{destination.city}</h3>
+                <h3 className={darkMode ? "text-xl font-bold text-white mb-3" : "text-xl font-bold text-gray-900 mb-3"}>{destination.city}</h3>
                 
                 {destination.showHouse && destination.house && (
-                  <div className="flex items-center gap-2 text-gray-600 mb-4">
+                  <div className={darkMode ? "flex items-center gap-2 text-gray-300 mb-4" : "flex items-center gap-2 text-gray-600 mb-4"}>
                     <PlaneTakeoff className="h-4 w-4" />
                     <span className="text-sm">{destination.house}</span>
                   </div>
                 )}
-                
-              
               </div>
             </div>
           ))}
         </div>
-
-       
       </div>
     </div>
   );

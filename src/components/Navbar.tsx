@@ -23,7 +23,7 @@ const Navbar = () => {
       style={{ backgroundColor: '#0a3da4' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-24">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 text-white hover:text-yellow-300 transition-colors duration-200">
               <img src= {Logo} alt="Allegiant Logo" className="h-80 w-80" />
